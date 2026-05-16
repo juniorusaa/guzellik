@@ -5,210 +5,273 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lumière Beauty — Güzellik & Estetik Merkezi</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#fdf8f5;--surface:#fff;--border:#f0e8e0;--text:#2a1810;--muted:#8a6a58;--rose:#c85a78;--rose2:#e87a9a;--cream:#faf3ee;--dark:#1a0e08;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
-img{display:block;width:100%;height:100%;object-fit:cover;}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(253,248,245,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.05em;}
-.nav-links{display:flex;gap:2rem;align-items:center;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.83rem;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--rose);}
-.nav-btn{padding:.6rem 1.5rem;background:linear-gradient(135deg,var(--rose),var(--rose2));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:.8rem;cursor:pointer;transition:all .2s;}
-.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,90,120,.3);}
-
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5% 5rem;gap:5rem;background:linear-gradient(135deg,#fdf0ea 0%,#fdf8f5 100%);}
-.h-tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;background:rgba(200,90,120,.07);border:1px solid rgba(200,90,120,.15);border-radius:999px;font-size:.72rem;color:var(--rose);font-weight:600;letter-spacing:.08em;margin-bottom:1.5rem;}
-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;line-height:1;letter-spacing:-.02em;margin-bottom:1.5rem;color:var(--text);}
-h1 em{display:block;font-style:italic;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.h-p{color:var(--muted);font-size:1.05rem;line-height:1.75;max-width:440px;margin-bottom:2.5rem;}
-.h-btns{display:flex;gap:1rem;flex-wrap:wrap;}
-.btn-rose{padding:.9rem 2.2rem;background:linear-gradient(135deg,var(--rose),var(--rose2));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;}
-.btn-rose:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(200,90,120,.3);}
-.btn-out{padding:.9rem 2.2rem;border:2px solid var(--border);border-radius:999px;color:var(--text);font-weight:600;font-size:.9rem;cursor:pointer;background:transparent;transition:all .2s;text-decoration:none;display:inline-block;}
-.btn-out:hover{border-color:var(--rose);color:var(--rose);}
-.hero-right{position:relative;}
-.hero-img-main{border-radius:28px;overflow:hidden;height:540px;box-shadow:0 20px 60px rgba(200,90,120,.12);}
-.fe1,.fe2{position:absolute;background:#fff;border-radius:14px;padding:.9rem 1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.08);border:1px solid var(--border);}
-.fe1{bottom:-1rem;left:-1.5rem;}
-.fe2{top:-1rem;right:-1rem;}
-.fe-num{font-weight:800;font-size:1.3rem;color:var(--rose);}
-.fe-lbl{font-size:.7rem;color:var(--muted);margin-top:.2rem;}
-
-#stats{padding:4rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;gap:5rem;flex-wrap:wrap;background:#fff;}
-.stat{text-align:center;}
-.stat-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.stat-l{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;margin-top:.2rem;}
-
-#hizmetler{padding:8rem 5%;max-width:1200px;margin:0 auto;}
-.sec-lbl{font-size:.7rem;color:var(--rose);text-transform:uppercase;letter-spacing:.2em;font-weight:600;margin-bottom:.5rem;}
-.sec-h{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:.75rem;color:var(--text);}
-.sec-h span{background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.sec-p{color:var(--muted);line-height:1.7;margin-bottom:3.5rem;max-width:500px;}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.svc{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;box-shadow:0 2px 15px rgba(200,90,120,.05);}
-.svc:hover{transform:translateY(-5px);box-shadow:0 16px 50px rgba(200,90,120,.12);border-color:rgba(200,90,120,.2);}
-.svc-img{height:200px;overflow:hidden;}
-.svc-img img{transition:transform .4s;}
-.svc:hover .svc-img img{transform:scale(1.06);}
-.svc-body{padding:1.5rem;}
-.svc-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--text);}
-.svc-body p{color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:1rem;}
-.svc-price{font-weight:700;color:var(--rose);font-size:.88rem;}
-.svc-dur{color:var(--muted);font-size:.75rem;margin-left:.5rem;}
-
-#ekip{padding:8rem 5%;border-top:1px solid var(--border);background:var(--cream);}
-#ekip .inner{max-width:1100px;margin:0 auto;}
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem;}
-.tc{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.04);}
-.tc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(200,90,120,.1);}
-.tc-img{height:220px;overflow:hidden;}
-.tc-img img{transition:transform .4s;}
-.tc:hover .tc-img img{transform:scale(1.05);}
-.tc-info{padding:1.2rem;text-align:center;}
-.tc-info h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:.2rem;color:var(--text);}
-.tc-spec{color:var(--rose);font-size:.75rem;font-weight:600;margin-bottom:.3rem;}
-.tc-exp{color:var(--muted);font-size:.75rem;}
-
-#galeri{padding:8rem 5%;border-top:1px solid var(--border);}
-#galeri .inner{max-width:1200px;margin:0 auto;}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:.75rem;margin-top:3rem;}
-.gi{border-radius:14px;overflow:hidden;cursor:pointer;}
-.gi img{height:100%;transition:transform .4s;}
-.gi:hover img{transform:scale(1.05);}
-.gi:first-child{grid-column:span 2;grid-row:span 2;}
-.gi:nth-child(5){grid-column:span 2;}
-
-#randevu{padding:8rem 5%;max-width:750px;margin:0 auto;text-align:center;}
-#randevu h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:700;margin-bottom:1rem;color:var(--text);}
-#randevu h2 em{font-style:italic;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-#randevu p{color:var(--muted);line-height:1.7;margin-bottom:3rem;}
-.appt-box{background:#fff;border:1px solid var(--border);border-radius:24px;padding:3rem;text-align:left;box-shadow:0 4px 30px rgba(200,90,120,.06);}
-.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
-.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.fg label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
-.fg input,.fg select{padding:.85rem 1rem;background:var(--bg);border:2px solid var(--border);border-radius:10px;color:var(--text);font-size:.88rem;outline:none;transition:border-color .2s;font-family:'Inter',sans-serif;}
-.fg input:focus,.fg select:focus{border-color:var(--rose);}
-.fg input::placeholder{color:var(--muted);}
-.appt-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--rose),var(--rose2));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s;margin-top:.5rem;}
-.appt-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,90,120,.3);}
-
-footer{padding:4rem 5%;border-top:1px solid var(--border);background:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
-.foot-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.foot-info{color:var(--muted);font-size:.82rem;text-align:center;}
-.foot-copy{color:var(--muted);font-size:.78rem;}
-
-#toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:rgba(200,90,120,.1);border:1px solid rgba(200,90,120,.25);backdrop-filter:blur(12px);border-radius:999px;padding:.9rem 1.8rem;font-size:.85rem;font-weight:600;color:var(--rose);z-index:600;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
-#toast.show{transform:translateX(-50%) translateY(0);}
-@media(max-width:900px){#hero{grid-template-columns:1fr;}.svc-grid{grid-template-columns:1fr;}.team-grid{grid-template-columns:1fr 1fr;}}
+:root{--bg:#0d0810;--card:#180d1f;--accent:#e879a0;--purple:#a855f7;--gold:#f0c674;--text:#f5f0f8;--muted:#9a8aa8;}
+body{font-family:"Segoe UI",sans-serif;background:var(--bg);color:var(--text);}
+nav{position:fixed;top:0;width:100%;background:rgba(13,8,16,0.96);backdrop-filter:blur(12px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;z-index:100;border-bottom:1px solid rgba(232,121,160,0.15);}
+.logo{font-size:1.4rem;font-weight:300;color:var(--accent);letter-spacing:4px;}
+.nav-links a{color:var(--text);text-decoration:none;margin-left:1.8rem;font-size:0.85rem;}
+.nav-links a:hover{color:var(--accent);}
+.btn-pink{background:linear-gradient(135deg,var(--accent),var(--purple));color:#fff;padding:0.65rem 1.5rem;border:none;border-radius:2rem;font-weight:700;font-size:0.85rem;cursor:pointer;text-decoration:none;transition:all 0.3s;}
+.btn-pink:hover{opacity:0.85;transform:translateY(-1px);}
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5% 4rem;gap:4rem;}
+.hero-tag{display:inline-block;background:rgba(232,121,160,0.1);border:1px solid rgba(232,121,160,0.3);color:var(--accent);padding:0.35rem 1rem;border-radius:2rem;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;line-height:1.3;letter-spacing:2px;margin-bottom:1.2rem;}
+.hero h1 span{color:var(--accent);font-weight:700;}
+.hero p{color:var(--muted);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
+.hero-imgs{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+.hero-img-main{width:100%;height:300px;object-fit:cover;border-radius:1rem;grid-column:span 2;border:1px solid rgba(232,121,160,0.15);}
+.hero-img-sm{width:100%;height:150px;object-fit:cover;border-radius:0.7rem;}
+/* STATS */
+.stats-strip{padding:3rem 5%;background:linear-gradient(135deg,rgba(232,121,160,0.08),rgba(168,85,247,0.06));border-top:1px solid rgba(232,121,160,0.1);border-bottom:1px solid rgba(232,121,160,0.1);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
+.ss-num{font-size:2.5rem;font-weight:800;color:var(--accent);}
+.ss-label{color:var(--muted);font-size:0.78rem;margin-top:0.3rem;}
+/* SERVICES */
+.section{padding:5rem 5%;}
+.sec-tag{color:var(--accent);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:0.6rem;}
+.sec-title{font-size:2.2rem;font-weight:300;letter-spacing:3px;margin-bottom:0.7rem;text-transform:uppercase;}
+.sec-sub{color:var(--muted);max-width:520px;line-height:1.75;}
+.srv-tabs{display:flex;gap:0.6rem;flex-wrap:wrap;margin:2rem 0 2.5rem;}
+.svt{padding:0.5rem 1.2rem;border:1px solid rgba(232,121,160,0.25);border-radius:2rem;font-size:0.82rem;font-weight:600;color:var(--muted);background:transparent;cursor:pointer;transition:all 0.25s;}
+.svt.active,.svt:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+.srv-panel{display:none;}
+.srv-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.srv-card{background:var(--card);border-radius:0.8rem;padding:1.5rem;border:1px solid rgba(232,121,160,0.08);transition:all 0.3s;}
+.srv-card:hover{border-color:rgba(232,121,160,0.4);transform:translateY(-3px);}
+.srv-name{font-weight:700;margin-bottom:0.4rem;}
+.srv-desc{color:var(--muted);font-size:0.82rem;line-height:1.6;margin-bottom:0.8rem;}
+.srv-price{color:var(--accent);font-weight:700;font-size:0.95rem;}
+.srv-dur{color:var(--muted);font-size:0.75rem;margin-left:0.5rem;}
+/* BEFORE/AFTER */
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.ba-card{background:var(--card);border-radius:0.8rem;overflow:hidden;border:1px solid rgba(232,121,160,0.08);}
+.ba-imgs{display:grid;grid-template-columns:1fr 1fr;}
+.ba-img{width:100%;height:180px;object-fit:cover;object-position:top;}
+.ba-label{text-align:center;padding:0.2rem;font-size:0.68rem;color:var(--muted);background:rgba(0,0,0,0.3);font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+.ba-info{padding:1rem;}
+.ba-service{font-weight:700;font-size:0.88rem;margin-bottom:0.2rem;}
+.ba-note{color:var(--muted);font-size:0.78rem;}
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem;}
+.team-card{background:var(--card);border-radius:1rem;overflow:hidden;border:1px solid rgba(232,121,160,0.08);text-align:center;transition:all 0.3s;}
+.team-card:hover{border-color:rgba(232,121,160,0.4);}
+.team-img{width:100%;height:240px;object-fit:cover;object-position:top;}
+.team-info{padding:1.2rem;}
+.team-name{font-weight:700;margin-bottom:0.2rem;}
+.team-spec{color:var(--accent);font-size:0.8rem;margin-bottom:0.5rem;}
+.team-exp{color:var(--muted);font-size:0.75rem;margin-bottom:0.8rem;}
+.team-social{display:flex;justify-content:center;gap:0.5rem;}
+.ts-btn{width:30px;height:30px;border-radius:50%;background:rgba(232,121,160,0.1);border:1px solid rgba(232,121,160,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.7rem;transition:all 0.2s;}
+.ts-btn:hover{background:var(--accent);color:#fff;}
+/* LOYALTY */
+.loyalty-section{padding:5rem 5%;background:rgba(24,13,31,0.7);}
+.loyalty-card{max-width:600px;margin:2rem auto 0;background:linear-gradient(135deg,var(--card),rgba(232,121,160,0.05));border:1px solid rgba(232,121,160,0.25);border-radius:1.5rem;padding:2.5rem;position:relative;overflow:hidden;}
+.lc-glow{position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(ellipse,rgba(232,121,160,0.15),transparent);pointer-events:none;}
+.lc-title{font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;}
+.lc-sub{color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem;}
+.stamps{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.stamp{width:44px;height:44px;border-radius:50%;border:2px solid rgba(232,121,160,0.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.stamp.filled{background:var(--accent);border-color:var(--accent);}
+.stamp.reward{background:var(--gold);border-color:var(--gold);}
+/* GIFT CARD */
+.gift-section{padding:5rem 5%;}
+.gift-card-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.gift-card-visual{background:linear-gradient(135deg,var(--accent),var(--purple));border-radius:1.2rem;padding:2.5rem;color:#fff;position:relative;overflow:hidden;}
+.gcv-glow{position:absolute;bottom:-40px;right:-40px;width:180px;height:180px;background:rgba(255,255,255,0.08);border-radius:50%;}
+.gcv-logo{font-size:1.2rem;font-weight:300;letter-spacing:3px;margin-bottom:2rem;}
+.gcv-amount{font-size:2.5rem;font-weight:800;margin-bottom:0.5rem;}
+.gcv-note{font-size:0.82rem;opacity:0.8;}
+.gift-amounts{display:flex;gap:0.8rem;flex-wrap:wrap;margin:1.5rem 0;}
+.ga{padding:0.6rem 1.2rem;border:1px solid rgba(232,121,160,0.3);border-radius:0.4rem;color:var(--accent);font-weight:700;cursor:pointer;transition:all 0.2s;}
+.ga:hover,.ga.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+/* APPT */
+.appt-form{background:var(--card);border-radius:1rem;padding:2.5rem;border:1px solid rgba(232,121,160,0.12);}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:0.75rem;color:var(--muted);font-weight:700;margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.5px;}
+.form-group input,.form-group select{width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(232,121,160,0.2);border-radius:0.5rem;padding:0.75rem 1rem;color:var(--text);font-size:0.9rem;outline:none;}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+/* WA */
+.wa-btn{position:fixed;bottom:2rem;right:2rem;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:200;box-shadow:0 4px 20px rgba(37,211,102,0.35);text-decoration:none;transition:transform 0.3s;}
+.wa-btn:hover{transform:scale(1.1);}
+.wa-btn svg{width:28px;height:28px;fill:white;}
+/* FOOTER */
+footer{background:#080610;padding:4rem 5% 2rem;border-top:1px solid rgba(232,121,160,0.1);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.footer-logo{font-size:1.5rem;font-weight:300;color:var(--accent);letter-spacing:4px;margin-bottom:0.8rem;}
+.footer-col h4{color:var(--text);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;}
+.footer-col a{display:block;color:var(--muted);text-decoration:none;font-size:0.82rem;margin-bottom:0.5rem;transition:color 0.2s;}
+.footer-col a:hover{color:var(--accent);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;display:flex;justify-content:space-between;color:var(--muted);font-size:0.75rem;}
+@media(max-width:768px){.hero,.gift-card-wrap,.footer-grid{grid-template-columns:1fr;}.srv-panel.active,.team-grid,.ba-grid{grid-template-columns:1fr;}.stats-strip{grid-template-columns:repeat(2,1fr);}.nav-links{display:none;}.form-row{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-<div id="toast"></div>
 <nav>
-  <div class="logo">Lumière</div>
-  <div class="nav-links">
-    <a href="#hizmetler">Hizmetler</a><a href="#ekip">Uzmanlar</a><a href="#galeri">Galeri</a>
-    <button class="nav-btn" onclick="document.getElementById('randevu').scrollIntoView({behavior:'smooth'})">Randevu Al</button>
-  </div>
+  <div class="logo">LUMIÈRE</div>
+  <div class="nav-links"><a href="#hizmetler">Hizmetler</a><a href="#oncesi-sonrasi">Önce/Sonra</a><a href="#ekip">Ekibimiz</a><a href="#randevu">Randevu</a></div>
+  <a href="#randevu" class="btn-pink">Randevu Al</a>
 </nav>
-
-<section id="hero">
+<section class="hero">
   <div>
-    <div class="h-tag">✨ İstanbul'un #1 Güzellik Merkezi</div>
-    <h1>Güzelliğinizi<br><em>Keşfedin</em></h1>
-    <p class="h-p">Uzman estetisyenler, premium ürünler ve kişiye özel bakım programlarıyla kendinizi en iyi hissettirin.</p>
-    <div class="h-btns">
-      <a href="#randevu" class="btn-rose">Randevu Al</a>
-      <a href="#hizmetler" class="btn-out">Hizmetlerimiz</a>
+    <div class="hero-tag">İstanbul'un Prestijli Güzellik Merkezi</div>
+    <h1>Kendini <span>En İyi</span> Hisset</h1>
+    <p>Lumière Beauty'de saç, cilt, tırnak ve estetik uygulamalarda uzman kadromuzla güzelliğini öne çıkarıyoruz. Her seans, sana özel bir deneyim.</p>
+    <a href="#randevu" class="btn-pink" style="display:inline-block;">Randevu Al</a>
+  </div>
+  <div class="hero-imgs">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80" alt="Salon" class="hero-img-main">
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Saç" class="hero-img-sm">
+    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="Güzellik" class="hero-img-sm">
+  </div>
+</section>
+<div class="stats-strip">
+  <div><div class="ss-num" data-target="12">0</div><div class="ss-label">Yıllık Deneyim</div></div>
+  <div><div class="ss-num" data-target="8500">0</div><div class="ss-label">Memnun Müşteri</div></div>
+  <div><div class="ss-num" data-target="15">0</div><div class="ss-label">Uzman Stilist</div></div>
+  <div><div class="ss-num" data-target="50">0</div><div class="ss-label">Hizmet Çeşidi</div></div>
+</div>
+<section class="section" id="hizmetler">
+  <div class="sec-tag">Hizmetlerimiz</div>
+  <div class="sec-title">Fiyat Listesi</div>
+  <div class="sec-sub">Tüm uygulamalar premium ürünlerle, uzman ellerde gerçekleştirilir.</div>
+  <div class="srv-tabs">
+    <button class="svt active" onclick="showSrv('sac',this)">Saç</button>
+    <button class="svt" onclick="showSrv('cilt',this)">Cilt Bakım</button>
+    <button class="svt" onclick="showSrv('tirnak',this)">Tırnak</button>
+    <button class="svt" onclick="showSrv('agda',this)">Ağda & Epilasyon</button>
+    <button class="svt" onclick="showSrv('estetik',this)">Estetik</button>
+  </div>
+  <div class="srv-panel active" id="srv-sac">
+    <div class="srv-card"><div class="srv-name">Saç Kesimi (Kadın)</div><div class="srv-desc">Yüz şekline özel kesim + fön</div><div class="srv-price">350 TL <span class="srv-dur">— 45 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Saç Boyama (Tam)</div><div class="srv-desc">Kişiye özel renk formülü, kalıcı boya</div><div class="srv-price">850 TL'den <span class="srv-dur">— 2 saat</span></div></div>
+    <div class="srv-card"><div class="srv-name">Balayage / Ombre</div><div class="srv-desc">Elle uygulanan geçişli renk tekniği</div><div class="srv-price">1.200 TL'den <span class="srv-dur">— 3 saat</span></div></div>
+    <div class="srv-card"><div class="srv-name">Keratin Bakım</div><div class="srv-desc">Brezilya keratin, 3-5 ay etkili</div><div class="srv-price">1.800 TL'den <span class="srv-dur">— 3 saat</span></div></div>
+    <div class="srv-card"><div class="srv-name">Saç Bakım Maskesi</div><div class="srv-desc">Profesyonel nemlendirme ve onarım</div><div class="srv-price">280 TL <span class="srv-dur">— 30 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Gelin Saçı</div><div class="srv-desc">Deneme + uygulama, özel paket</div><div class="srv-price">2.500 TL'den <span class="srv-dur">— 4 saat</span></div></div>
+  </div>
+  <div class="srv-panel" id="srv-cilt">
+    <div class="srv-card"><div class="srv-name">Klasik Yüz Bakımı</div><div class="srv-desc">Temizleme, peeling, maske, nemlendirme</div><div class="srv-price">450 TL <span class="srv-dur">— 60 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Anti-Aging Bakım</div><div class="srv-desc">Kırışıklık karşıtı, sıkılaştırıcı serum</div><div class="srv-price">750 TL <span class="srv-dur">— 75 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Kimyasal Peeling</div><div class="srv-desc">Cilt yenileyici asit peeling süreci</div><div class="srv-price">600 TL <span class="srv-dur">— 45 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Hydrafacial</div><div class="srv-desc">Derin temizleme + nemlendirme + gençleştirme</div><div class="srv-price">1.100 TL <span class="srv-dur">— 90 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Akne Tedavisi</div><div class="srv-desc">Sıkıştırma + enzim + LED ışık tedavisi</div><div class="srv-price">520 TL <span class="srv-dur">— 60 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Leke Tedavisi</div><div class="srv-desc">Pigment giderici özel uygulama serisi</div><div class="srv-price">680 TL <span class="srv-dur">— 60 dk</span></div></div>
+  </div>
+  <div class="srv-panel" id="srv-tirnak">
+    <div class="srv-card"><div class="srv-name">Manikür + Oje</div><div class="srv-desc">Şekil, bakım ve renk uygulaması</div><div class="srv-price">180 TL <span class="srv-dur">— 45 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Pedikür + Oje</div><div class="srv-desc">Şekil, cilt bakımı ve renk uygulaması</div><div class="srv-price">220 TL <span class="srv-dur">— 60 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Kalıcı Oje (Gel)</div><div class="srv-desc">2-3 hafta dayanıklı gel oje</div><div class="srv-price">250 TL <span class="srv-dur">— 50 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Protez Tırnak</div><div class="srv-desc">Akrilik veya jel protez uygulama</div><div class="srv-price">500 TL'den <span class="srv-dur">— 90 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Nail Art</div><div class="srv-desc">Özel tasarım, taş ve motif uygulaması</div><div class="srv-price">80 TL+ <span class="srv-dur">— Tasarıma göre</span></div></div>
+    <div class="srv-card"><div class="srv-name">Protez Bakım Dolgu</div><div class="srv-desc">Mevcut protez tırnağın bakımı</div><div class="srv-price">280 TL <span class="srv-dur">— 60 dk</span></div></div>
+  </div>
+  <div class="srv-panel" id="srv-agda">
+    <div class="srv-card"><div class="srv-name">Bacak Ağdası (Tam)</div><div class="srv-desc">Sıcak veya soğuk ağda seçenekleri</div><div class="srv-price">320 TL <span class="srv-dur">— 40 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Kol Ağdası</div><div class="srv-desc">Dirseğe kadar veya tama</div><div class="srv-price">180 TL <span class="srv-dur">— 25 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">İnce Bölge Ağdası</div><div class="srv-desc">Üst dudak, kaş arası, yüz</div><div class="srv-price">80 TL'den <span class="srv-dur">— 15 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Lazer Epilasyon</div><div class="srv-desc">Diode lazer, kalıcı tüy azaltma</div><div class="srv-price">500 TL/seans'tan <span class="srv-dur">— Bölgeye göre</span></div></div>
+    <div class="srv-card"><div class="srv-name">Brezilya Ağdası</div><div class="srv-desc">Bikini ve tüm bölge özel uygulama</div><div class="srv-price">380 TL <span class="srv-dur">— 30 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Tam Vücut Ağdası</div><div class="srv-desc">Tüm bölgeler, özel paket fiyatı</div><div class="srv-price">680 TL <span class="srv-dur">— 75 dk</span></div></div>
+  </div>
+  <div class="srv-panel" id="srv-estetik">
+    <div class="srv-card"><div class="srv-name">Kaş Tasarımı</div><div class="srv-desc">Yüz şekline özel kaş şekillendirme</div><div class="srv-price">150 TL <span class="srv-dur">— 20 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Kirpik Lifting</div><div class="srv-desc">Doğal kirpikleri kaldırma ve şekillendirme</div><div class="srv-price">400 TL <span class="srv-dur">— 45 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Kirpik Uzatma</div><div class="srv-desc">İpek kirpik, klasik veya hacimli</div><div class="srv-price">600 TL'den <span class="srv-dur">— 90 dk</span></div></div>
+    <div class="srv-card"><div class="srv-name">Microblading</div><div class="srv-desc">Kalıcı kaş boyama, 1-2 yıl etkili</div><div class="srv-price">1.500 TL <span class="srv-dur">— 2 saat</span></div></div>
+    <div class="srv-card"><div class="srv-name">Gelin Makyajı</div><div class="srv-desc">Deneme + düğün günü HD makyaj</div><div class="srv-price">2.200 TL'den <span class="srv-dur">— 3 saat</span></div></div>
+    <div class="srv-card"><div class="srv-name">Profesyonel Makyaj</div><div class="srv-desc">Özel davet ve etkinlik makyajı</div><div class="srv-price">800 TL'den <span class="srv-dur">— 90 dk</span></div></div>
+  </div>
+</section>
+<!-- BEFORE/AFTER -->
+<section class="section" id="oncesi-sonrasi" style="background:rgba(24,13,31,0.5);">
+  <div class="sec-tag">Sonuçlar</div>
+  <div class="sec-title">Önce & Sonra</div>
+  <div class="ba-grid">
+    <div class="ba-card"><div class="ba-imgs"><div><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=80" alt="Önce" class="ba-img"><div class="ba-label">Önce</div></div><div><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=300&q=80" alt="Sonra" class="ba-img"><div class="ba-label" style="background:rgba(232,121,160,0.5);">Sonra</div></div></div><div class="ba-info"><div class="ba-service">Balayage + Fön</div><div class="ba-note">3 seans uygulama</div></div></div>
+    <div class="ba-card"><div class="ba-imgs"><div><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=300&q=80" alt="Önce" class="ba-img"><div class="ba-label">Önce</div></div><div><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&q=80" alt="Sonra" class="ba-img"><div class="ba-label" style="background:rgba(232,121,160,0.5);">Sonra</div></div></div><div class="ba-info"><div class="ba-service">Hydrafacial Cilt Bakımı</div><div class="ba-note">1 seans uygulama</div></div></div>
+    <div class="ba-card"><div class="ba-imgs"><div><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&q=80" alt="Önce" class="ba-img"><div class="ba-label">Önce</div></div><div><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&q=80" alt="Sonra" class="ba-img"><div class="ba-label" style="background:rgba(232,121,160,0.5);">Sonra</div></div></div><div class="ba-info"><div class="ba-service">Protez Tırnak + Nail Art</div><div class="ba-note">2 saat uygulama</div></div></div>
+  </div>
+</section>
+<!-- TEAM -->
+<section class="section" id="ekip">
+  <div class="sec-tag">Ekibimiz</div>
+  <div class="sec-title">Uzman Stilistlerimiz</div>
+  <div class="team-grid">
+    <div class="team-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Stilist" class="team-img"><div class="team-info"><div class="team-name">Aylin Şahin</div><div class="team-spec">Renk Uzmanı</div><div class="team-exp">12 yıl deneyim</div><div class="team-social"><div class="ts-btn">in</div><div class="ts-btn">ig</div></div></div></div>
+    <div class="team-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80" alt="Stilist" class="team-img"><div class="team-info"><div class="team-name">Seda Kılıç</div><div class="team-spec">Cilt Bakım Uzmanı</div><div class="team-exp">8 yıl deneyim</div><div class="team-social"><div class="ts-btn">in</div><div class="ts-btn">ig</div></div></div></div>
+    <div class="team-card"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Stilist" class="team-img"><div class="team-info"><div class="team-name">Merve Can</div><div class="team-spec">Makyaj Sanatçısı</div><div class="team-exp">7 yıl deneyim</div><div class="team-social"><div class="ts-btn">in</div><div class="ts-btn">ig</div></div></div></div>
+    <div class="team-card"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Stilist" class="team-img"><div class="team-info"><div class="team-name">Naz Demir</div><div class="team-spec">Tırnak Tasarımcısı</div><div class="team-exp">5 yıl deneyim</div><div class="team-social"><div class="ts-btn">in</div><div class="ts-btn">ig</div></div></div></div>
+  </div>
+</section>
+<!-- LOYALTY -->
+<section class="loyalty-section">
+  <div style="text-align:center;"><div class="sec-tag" style="display:inline-block;">Sadakat Programı</div><div class="sec-title">Lumière Kart</div></div>
+  <div class="loyalty-card" style="margin:2rem auto 0;">
+    <div class="lc-glow"></div>
+    <div class="lc-title">Her 10 Seansta 1 Ücretsiz</div>
+    <div class="lc-sub">Puan biriktir, ücretsiz hizmet kazan. Her ziyaretinde damga topla!</div>
+    <div class="stamps">
+      <div class="stamp filled">✓</div><div class="stamp filled">✓</div><div class="stamp filled">✓</div><div class="stamp filled">✓</div><div class="stamp filled">✓</div><div class="stamp filled">✓</div><div class="stamp filled">✓</div><div class="stamp"></div><div class="stamp"></div><div class="stamp reward">★</div>
+    </div>
+    <p style="color:var(--muted);font-size:0.82rem;">7/10 seans tamamlandı — 3 seans daha sonra ücretsiz hizmet!</p>
+    <a href="#randevu" class="btn-pink" style="display:inline-block;margin-top:1.5rem;">Kartımı Etkinleştir</a>
+  </div>
+</section>
+<!-- GIFT CARD -->
+<section class="gift-section">
+  <div class="sec-tag">Hediye</div>
+  <div class="sec-title">Hediye Kartı Al</div>
+  <div class="gift-card-wrap">
+    <div class="gift-card-visual">
+      <div class="gcv-glow"></div>
+      <div class="gcv-logo">LUMIÈRE</div>
+      <div class="gcv-amount">500 TL</div>
+      <div class="gcv-note">Hediye Kartı — Tüm hizmetlerde geçerli</div>
+    </div>
+    <div>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem;">Sevdiklerinize en güzel hediyeyi verin. Lumière Hediye Kartı tüm hizmetlerde, istediğiniz zaman kullanılabilir.</p>
+      <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.8rem;">Tutar Seçin:</p>
+      <div class="gift-amounts">
+        <div class="ga" onclick="setGift(this,'250 TL')">250 TL</div>
+        <div class="ga active" onclick="setGift(this,'500 TL')">500 TL</div>
+        <div class="ga" onclick="setGift(this,'1.000 TL')">1.000 TL</div>
+        <div class="ga" onclick="setGift(this,'2.000 TL')">2.000 TL</div>
+      </div>
+      <a href="#" class="btn-pink" style="display:inline-block;margin-top:1rem;width:100%;text-align:center;">Hediye Kartı Satın Al</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-img-main"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80" alt="Güzellik Merkezi"></div>
-    <div class="fe1"><div class="fe-num">4.9★</div><div class="fe-lbl">Müşteri Puanı</div></div>
-    <div class="fe2"><div class="fe-num">8K+</div><div class="fe-lbl">Mutlu Müşteri</div></div>
-  </div>
 </section>
-
-<section id="stats">
-  <div class="stat"><div class="stat-n">8+</div><div class="stat-l">Yıl Deneyim</div></div>
-  <div class="stat"><div class="stat-n">8K+</div><div class="stat-l">Mutlu Müşteri</div></div>
-  <div class="stat"><div class="stat-n">15</div><div class="stat-l">Uzman Ekip</div></div>
-  <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Hizmet Çeşidi</div></div>
-</section>
-
-<section id="hizmetler">
-  <p class="sec-lbl">Ne Sunuyoruz</p>
-  <h2 class="sec-h">Premium <span>Hizmetlerimiz</span></h2>
-  <p class="sec-p">Her biri uzman ellerle uygulanan, kişiye özel güzellik ve bakım hizmetleri.</p>
-  <div class="svc-grid">
-    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80" alt="Yüz Bakımı"></div><div class="svc-body"><h3>Yüz Bakımı</h3><p>Cilt tipinize özel derin temizlik, nemlendirme ve anti-aging bakım protokolleri.</p><div><span class="svc-price">450₺'den</span><span class="svc-dur">· 60 dk</span></div></div></div>
-    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&q=80" alt="Manikür"></div><div class="svc-body"><h3>Manikür & Pedikür</h3><p>Kalıcı oje, jel, nail art. Premium ürünlerle uzun süre dayanıklı sonuçlar.</p><div><span class="svc-price">250₺'den</span><span class="svc-dur">· 45 dk</span></div></div></div>
-    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&q=80" alt="Masaj"></div><div class="svc-body"><h3>Masaj Terapisi</h3><p>Klasik, aromaterapi, derin doku ve sıcak taş masajı seçenekleriyle derin rahatlama.</p><div><span class="svc-price">600₺'den</span><span class="svc-dur">· 60 dk</span></div></div></div>
-    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&q=80" alt="Lazer"></div><div class="svc-body"><h3>Lazer Epilasyon</h3><p>Diode lazer teknolojisiyle kalıcı ve ağrısız epilasyon. Tüm cilt tiplerine uygun.</p><div><span class="svc-price">350₺'den</span><span class="svc-dur">· 30 dk</span></div></div></div>
-    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Kaş Kirpik"></div><div class="svc-body"><h3>Kaş & Kirpik</h3><p>Microblading, laminasyon, hacimli kirpik ve lifting uygulamaları.</p><div><span class="svc-price">400₺'den</span><span class="svc-dur">· 90 dk</span></div></div></div>
-    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=500&q=80" alt="Cilt Analizi"></div><div class="svc-body"><h3>Cilt Analizi</h3><p>İleri teknoloji cihazlarla detaylı cilt analizi ve kişisel bakım programı.</p><div><span class="svc-price">200₺</span><span class="svc-dur">· 30 dk</span></div></div></div>
-  </div>
-</section>
-
-<section id="ekip">
-  <div class="inner">
-    <p class="sec-lbl" style="text-align:center">Uzman Ekibimiz</p>
-    <h2 class="sec-h" style="text-align:center">Uzman <span>Estetisyenler</span></h2>
-    <div class="team-grid">
-      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Elif"></div><div class="tc-info"><h3>Elif Şahin</h3><div class="tc-spec">Cilt Bakım Uzmanı</div><div class="tc-exp">10 yıl deneyim</div></div></div>
-      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Zeynep"></div><div class="tc-info"><h3>Zeynep Ak</h3><div class="tc-spec">Lazer Uzmanı</div><div class="tc-exp">7 yıl deneyim</div></div></div>
-      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Selin"></div><div class="tc-info"><h3>Selin Kara</h3><div class="tc-spec">Nail Artist</div><div class="tc-exp">6 yıl deneyim</div></div></div>
-      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" alt="Ayşe"></div><div class="tc-info"><h3>Ayşe Demir</h3><div class="tc-spec">Masaj Terapisti</div><div class="tc-exp">12 yıl deneyim</div></div></div>
+<!-- APPOINTMENT -->
+<section class="section" id="randevu">
+  <div style="max-width:600px;margin:0 auto;">
+    <div class="sec-tag" style="text-align:center;">Randevu</div>
+    <div class="sec-title" style="text-align:center;">Hemen Randevu Al</div>
+    <div class="appt-form" style="margin-top:2rem;">
+      <div class="form-row"><div class="form-group"><label>Ad Soyad</label><input type="text" placeholder="Adınız"></div><div class="form-group"><label>Telefon</label><input type="tel" placeholder="+90 5xx xxx xx xx"></div></div>
+      <div class="form-group"><label>Hizmet</label><select><option>Saç Kesimi</option><option>Saç Boyama / Balayage</option><option>Keratin Bakım</option><option>Cilt Bakımı</option><option>Manikür / Pedikür</option><option>Makyaj</option></select></div>
+      <div class="form-group"><label>Stilist</label><select><option>Fark Etmez</option><option>Aylin Şahin</option><option>Seda Kılıç</option><option>Merve Can</option><option>Naz Demir</option></select></div>
+      <div class="form-row"><div class="form-group"><label>Tarih</label><input type="date"></div><div class="form-group"><label>Saat</label><select><option>09:00</option><option>10:00</option><option>11:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option></select></div></div>
+      <button class="btn-pink" style="width:100%;padding:1rem;font-size:1rem;border-radius:0.5rem;">Randevu Oluştur</button>
     </div>
   </div>
 </section>
-
-<section id="galeri">
-  <div class="inner">
-    <p class="sec-lbl" style="text-align:center">Merkezimiz</p>
-    <h2 class="sec-h" style="text-align:center">Atmosfer & <span>Bakım</span></h2>
-    <div class="gal-grid">
-      <div class="gi"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Salon"></div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=400&q=80" alt="Bakım"></div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80" alt="Cilt"></div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1560066984-138daaa7a248?w=800&q=80" alt="Ürünler"></div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=400&q=80" alt="Manikür"></div>
-      <div class="gi"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80" alt="Masaj"></div>
-    </div>
-  </div>
-</section>
-
-<section id="randevu">
-  <h2>Online <em>Randevu</em></h2>
-  <p>Uzmanlarımızla buluşmak için hemen randevu alın.</p>
-  <div class="appt-box">
-    <div class="fg-row">
-      <div class="fg"><label>Ad Soyad</label><input type="text" placeholder="Adınız" required></div>
-      <div class="fg"><label>Telefon</label><input type="tel" placeholder="+90 5XX XXX XX XX"></div>
-    </div>
-    <div class="fg"><label>Hizmet</label><select><option>Yüz Bakımı</option><option>Manikür & Pedikür</option><option>Masaj Terapisi</option><option>Lazer Epilasyon</option><option>Kaş & Kirpik</option></select></div>
-    <div class="fg-row">
-      <div class="fg"><label>Uzman</label><select><option>Fark etmez</option><option>Elif Şahin</option><option>Zeynep Ak</option><option>Selin Kara</option><option>Ayşe Demir</option></select></div>
-      <div class="fg"><label>Tarih</label><input type="date"></div>
-    </div>
-    <div class="fg"><label>Saat</label><select><option>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option></select></div>
-    <button class="appt-btn" onclick="submitAppt()">Randevu Talep Et ✨</button>
-  </div>
-</section>
-
 <footer>
-  <div class="foot-logo">Lumière Beauty</div>
-  <div class="foot-info">📍 Nişantaşı, İstanbul &nbsp;|&nbsp; 📞 0212 555 88 99 &nbsp;|&nbsp; Pzt-Cts 09:00-20:00</div>
-  <div class="foot-copy">© 2025 Lumière Beauty Center</div>
+  <div class="footer-grid">
+    <div><div class="footer-logo">LUMIÈRE</div><div style="color:var(--muted);font-size:0.85rem;line-height:1.7;">İstanbul'da saç, cilt, tırnak ve estetik uygulamalarda 12 yıldır premium hizmet. 15 uzman stilist, 50+ hizmet çeşidi.</div></div>
+    <div class="footer-col"><h4>Hizmetler</h4><a href="#">Saç Uygulamaları</a><a href="#">Cilt Bakımı</a><a href="#">Tırnak Tasarımı</a><a href="#">Estetik</a></div>
+    <div class="footer-col"><h4>İletişim</h4><a href="#">+90 212 555 0400</a><a href="#">info@lumierebeauty.com.tr</a><a href="#">Nişantaşı, İstanbul</a><a href="#">Pzt-Cmt: 09:00-20:00</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Lumière Beauty. Tüm hakları saklıdır.</p><p>Nişantaşı, İstanbul</p></div>
 </footer>
-
+<a href="https://wa.me/902125550400" class="wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <script>
-function submitAppt(){toast('✅ Randevu talebiniz alındı! SMS ile onay gönderilecek.');}
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+function showSrv(id,btn){document.querySelectorAll(".svt").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".srv-panel").forEach(p=>p.classList.remove("active"));btn.classList.add("active");document.getElementById("srv-"+id).classList.add("active");}
+function setGift(el,amt){document.querySelectorAll(".ga").forEach(g=>g.classList.remove("active"));el.classList.add("active");document.querySelector(".gcv-amount").textContent=amt;}
+function animateCounters(){document.querySelectorAll("[data-target]").forEach(el=>{const t=+el.dataset.target,d=1800;let s=null;(function step(ts){if(!s)s=ts;const p=Math.min((ts-s)/d,1);const v=Math.floor(p*t);el.textContent=t>=1000?v.toLocaleString("tr-TR"):v;if(p<1)requestAnimationFrame(step);})(performance.now());});}
+new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){animateCounters();}});},{threshold:0.3}).observe(document.querySelector(".stats-strip"));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",e=>{const t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"});}});});
 </script>
 </body>
 </html>
