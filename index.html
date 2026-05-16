@@ -7,99 +7,101 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#0c080f;--surface:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.07);--text:#fdf5ff;--muted:rgba(253,245,255,0.45);--rose:#e879a0;--rose2:#f5a3c0;--purple:#c084fc;--gold:#e8c97e;}
+:root{--bg:#fdf8f5;--surface:#fff;--border:#f0e8e0;--text:#2a1810;--muted:#8a6a58;--rose:#c85a78;--rose2:#e87a9a;--cream:#faf3ee;--dark:#1a0e08;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5%;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px);background:rgba(12,8,15,0.85);border-bottom:1px solid var(--border);}
-.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--rose2),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:0.05em;}
-.nav-links{display:flex;gap:2rem;align-items:center;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.83rem;font-weight:500;transition:color 0.2s;}
-.nav-links a:hover{color:var(--text);}
-.nav-btn{padding:0.6rem 1.5rem;background:linear-gradient(135deg,var(--rose),var(--purple));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:0.8rem;cursor:pointer;transition:all 0.2s;}
-.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,121,160,0.3);}
+img{display:block;width:100%;height:100%;object-fit:cover;}
 
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5% 5rem;gap:5rem;position:relative;overflow:hidden;}
-.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);pointer-events:none;}
-.hg1{background:rgba(232,121,160,0.07);top:-200px;right:-100px;}
-.hg2{background:rgba(192,132,252,0.05);bottom:-200px;left:-100px;}
-.h-tag{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;background:rgba(232,121,160,0.08);border:1px solid rgba(232,121,160,0.2);border-radius:999px;font-size:0.72rem;color:var(--rose2);font-weight:600;letter-spacing:0.08em;margin-bottom:1.5rem;}
-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;line-height:1;letter-spacing:-0.02em;margin-bottom:1.5rem;}
-h1 em{display:block;font-style:italic;background:linear-gradient(135deg,var(--rose),var(--rose2),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(253,248,245,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.05em;}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.83rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--rose);}
+.nav-btn{padding:.6rem 1.5rem;background:linear-gradient(135deg,var(--rose),var(--rose2));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:.8rem;cursor:pointer;transition:all .2s;}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,90,120,.3);}
+
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5% 5rem;gap:5rem;background:linear-gradient(135deg,#fdf0ea 0%,#fdf8f5 100%);}
+.h-tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;background:rgba(200,90,120,.07);border:1px solid rgba(200,90,120,.15);border-radius:999px;font-size:.72rem;color:var(--rose);font-weight:600;letter-spacing:.08em;margin-bottom:1.5rem;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;line-height:1;letter-spacing:-.02em;margin-bottom:1.5rem;color:var(--text);}
+h1 em{display:block;font-style:italic;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .h-p{color:var(--muted);font-size:1.05rem;line-height:1.75;max-width:440px;margin-bottom:2.5rem;}
 .h-btns{display:flex;gap:1rem;flex-wrap:wrap;}
-.btn-rose{padding:0.9rem 2.2rem;background:linear-gradient(135deg,var(--rose),var(--purple));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;}
-.btn-rose:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(232,121,160,0.35);}
-.btn-out{padding:0.9rem 2.2rem;border:1px solid var(--border);border-radius:999px;color:var(--text);font-weight:600;font-size:0.9rem;cursor:pointer;background:transparent;transition:all 0.2s;text-decoration:none;display:inline-block;}
-.btn-out:hover{border-color:rgba(232,121,160,0.3);color:var(--rose2);}
+.btn-rose{padding:.9rem 2.2rem;background:linear-gradient(135deg,var(--rose),var(--rose2));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;}
+.btn-rose:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(200,90,120,.3);}
+.btn-out{padding:.9rem 2.2rem;border:2px solid var(--border);border-radius:999px;color:var(--text);font-weight:600;font-size:.9rem;cursor:pointer;background:transparent;transition:all .2s;text-decoration:none;display:inline-block;}
+.btn-out:hover{border-color:var(--rose);color:var(--rose);}
 .hero-right{position:relative;}
-.hero-visual{background:linear-gradient(135deg,rgba(232,121,160,0.06),rgba(192,132,252,0.04));border:1px solid rgba(232,121,160,0.1);border-radius:28px;padding:3rem;text-align:center;font-size:6rem;}
-.float-el{position:absolute;background:rgba(12,8,15,0.9);border:1px solid rgba(232,121,160,0.15);border-radius:14px;padding:0.9rem 1.2rem;backdrop-filter:blur(12px);}
-.fe1{top:-1rem;left:-1rem;}
-.fe2{bottom:1rem;right:-1rem;}
-.fe-num{font-weight:800;font-size:1.2rem;color:var(--rose);}
-.fe-lbl{font-size:0.7rem;color:var(--muted);margin-top:0.2rem;}
+.hero-img-main{border-radius:28px;overflow:hidden;height:540px;box-shadow:0 20px 60px rgba(200,90,120,.12);}
+.fe1,.fe2{position:absolute;background:#fff;border-radius:14px;padding:.9rem 1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.08);border:1px solid var(--border);}
+.fe1{bottom:-1rem;left:-1.5rem;}
+.fe2{top:-1rem;right:-1rem;}
+.fe-num{font-weight:800;font-size:1.3rem;color:var(--rose);}
+.fe-lbl{font-size:.7rem;color:var(--muted);margin-top:.2rem;}
 
-#stats{padding:4rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
+#stats{padding:4rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:center;gap:5rem;flex-wrap:wrap;background:#fff;}
 .stat{text-align:center;}
-.stat-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.stat-l{color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;margin-top:0.2rem;}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-l{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;margin-top:.2rem;}
 
 #hizmetler{padding:8rem 5%;max-width:1200px;margin:0 auto;}
-.sec-lbl{font-size:0.7rem;color:var(--rose2);text-transform:uppercase;letter-spacing:0.2em;font-weight:600;margin-bottom:0.5rem;}
-.sec-h{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:0.75rem;}
-.sec-h span{background:linear-gradient(135deg,var(--rose),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sec-lbl{font-size:.7rem;color:var(--rose);text-transform:uppercase;letter-spacing:.2em;font-weight:600;margin-bottom:.5rem;}
+.sec-h{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:.75rem;color:var(--text);}
+.sec-h span{background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .sec-p{color:var(--muted);line-height:1.7;margin-bottom:3.5rem;max-width:500px;}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.svc{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden;}
-.svc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,121,160,0.04),transparent);opacity:0;transition:opacity 0.3s;}
-.svc:hover{transform:translateY(-5px);border-color:rgba(232,121,160,0.2);}
-.svc:hover::before{opacity:1;}
-.svc-icon{font-size:2rem;margin-bottom:1.2rem;display:block;}
-.svc h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;}
-.svc p{color:var(--muted);font-size:0.85rem;line-height:1.6;margin-bottom:1rem;}
-.svc-price{font-weight:700;color:var(--rose2);font-size:0.88rem;}
-.svc-dur{color:var(--muted);font-size:0.75rem;margin-left:0.5rem;}
+.svc{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;box-shadow:0 2px 15px rgba(200,90,120,.05);}
+.svc:hover{transform:translateY(-5px);box-shadow:0 16px 50px rgba(200,90,120,.12);border-color:rgba(200,90,120,.2);}
+.svc-img{height:200px;overflow:hidden;}
+.svc-img img{transition:transform .4s;}
+.svc:hover .svc-img img{transform:scale(1.06);}
+.svc-body{padding:1.5rem;}
+.svc-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--text);}
+.svc-body p{color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:1rem;}
+.svc-price{font-weight:700;color:var(--rose);font-size:.88rem;}
+.svc-dur{color:var(--muted);font-size:.75rem;margin-left:.5rem;}
 
-#ekip{padding:8rem 5%;border-top:1px solid var(--border);background:rgba(255,255,255,0.01);}
+#ekip{padding:8rem 5%;border-top:1px solid var(--border);background:var(--cream);}
 #ekip .inner{max-width:1100px;margin:0 auto;}
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem;}
-.tc{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all 0.3s;text-align:center;}
-.tc:hover{transform:translateY(-4px);border-color:rgba(232,121,160,0.2);}
-.tc-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;background:linear-gradient(135deg,rgba(232,121,160,0.06),rgba(192,132,252,0.04));}
-.tc-info{padding:1.2rem;}
-.tc-info h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:0.2rem;}
-.tc-spec{color:var(--rose2);font-size:0.75rem;font-weight:600;margin-bottom:0.4rem;}
-.tc-exp{color:var(--muted);font-size:0.75rem;}
+.tc{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.04);}
+.tc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(200,90,120,.1);}
+.tc-img{height:220px;overflow:hidden;}
+.tc-img img{transition:transform .4s;}
+.tc:hover .tc-img img{transform:scale(1.05);}
+.tc-info{padding:1.2rem;text-align:center;}
+.tc-info h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:.2rem;color:var(--text);}
+.tc-spec{color:var(--rose);font-size:.75rem;font-weight:600;margin-bottom:.3rem;}
+.tc-exp{color:var(--muted);font-size:.75rem;}
 
 #galeri{padding:8rem 5%;border-top:1px solid var(--border);}
 #galeri .inner{max-width:1200px;margin:0 auto;}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,180px);gap:1rem;margin-top:4rem;}
-.gi{border-radius:14px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:rgba(255,255,255,0.02);transition:all 0.3s;cursor:pointer;}
-.gi:hover{border-color:rgba(232,121,160,0.2);transform:scale(1.02);}
-.gi:first-child{grid-column:span 2;grid-row:span 2;font-size:6rem;}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:.75rem;margin-top:3rem;}
+.gi{border-radius:14px;overflow:hidden;cursor:pointer;}
+.gi img{height:100%;transition:transform .4s;}
+.gi:hover img{transform:scale(1.05);}
+.gi:first-child{grid-column:span 2;grid-row:span 2;}
 .gi:nth-child(5){grid-column:span 2;}
 
 #randevu{padding:8rem 5%;max-width:750px;margin:0 auto;text-align:center;}
-#randevu h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:700;margin-bottom:1rem;}
-#randevu h2 em{font-style:italic;background:linear-gradient(135deg,var(--rose),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+#randevu h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:700;margin-bottom:1rem;color:var(--text);}
+#randevu h2 em{font-style:italic;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 #randevu p{color:var(--muted);line-height:1.7;margin-bottom:3rem;}
-.appt-box{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:3rem;text-align:left;}
-.fg{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
+.appt-box{background:#fff;border:1px solid var(--border);border-radius:24px;padding:3rem;text-align:left;box-shadow:0 4px 30px rgba(200,90,120,.06);}
+.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.fg label{font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;}
-.fg input,.fg select{padding:0.85rem 1rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:0.88rem;outline:none;transition:border-color 0.2s;font-family:'Inter',sans-serif;}
-.fg input:focus,.fg select:focus{border-color:rgba(232,121,160,0.4);}
-.fg select option{background:#1a0a1f;}
+.fg label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+.fg input,.fg select{padding:.85rem 1rem;background:var(--bg);border:2px solid var(--border);border-radius:10px;color:var(--text);font-size:.88rem;outline:none;transition:border-color .2s;font-family:'Inter',sans-serif;}
+.fg input:focus,.fg select:focus{border-color:var(--rose);}
 .fg input::placeholder{color:var(--muted);}
-.appt-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--rose),var(--purple));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:0.95rem;cursor:pointer;transition:all 0.2s;margin-top:0.5rem;}
-.appt-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,121,160,0.3);}
+.appt-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--rose),var(--rose2));border:none;border-radius:999px;color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s;margin-top:.5rem;}
+.appt-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,90,120,.3);}
 
-footer{padding:4rem 5%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
-.foot-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.foot-info{color:var(--muted);font-size:0.82rem;text-align:center;}
-.foot-copy{color:var(--muted);font-size:0.78rem;}
+footer{padding:4rem 5%;border-top:1px solid var(--border);background:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
+.foot-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.foot-info{color:var(--muted);font-size:.82rem;text-align:center;}
+.foot-copy{color:var(--muted);font-size:.78rem;}
 
-#toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:rgba(232,121,160,0.1);border:1px solid rgba(232,121,160,0.3);backdrop-filter:blur(12px);border-radius:999px;padding:0.9rem 1.8rem;font-size:0.85rem;font-weight:600;color:var(--rose2);z-index:600;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);}
+#toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:rgba(200,90,120,.1);border:1px solid rgba(200,90,120,.25);backdrop-filter:blur(12px);border-radius:999px;padding:.9rem 1.8rem;font-size:.85rem;font-weight:600;color:var(--rose);z-index:600;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
 #toast.show{transform:translateX(-50%) translateY(0);}
 @media(max-width:900px){#hero{grid-template-columns:1fr;}.svc-grid{grid-template-columns:1fr;}.team-grid{grid-template-columns:1fr 1fr;}}
 </style>
@@ -109,15 +111,12 @@ footer{padding:4rem 5%;border-top:1px solid var(--border);display:flex;justify-c
 <nav>
   <div class="logo">Lumière</div>
   <div class="nav-links">
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#ekip">Uzmanlar</a>
-    <a href="#galeri">Galeri</a>
+    <a href="#hizmetler">Hizmetler</a><a href="#ekip">Uzmanlar</a><a href="#galeri">Galeri</a>
     <button class="nav-btn" onclick="document.getElementById('randevu').scrollIntoView({behavior:'smooth'})">Randevu Al</button>
   </div>
 </nav>
 
 <section id="hero">
-  <div class="hero-glow hg1"></div><div class="hero-glow hg2"></div>
   <div>
     <div class="h-tag">✨ İstanbul'un #1 Güzellik Merkezi</div>
     <h1>Güzelliğinizi<br><em>Keşfedin</em></h1>
@@ -128,9 +127,9 @@ footer{padding:4rem 5%;border-top:1px solid var(--border);display:flex;justify-c
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-visual">💆‍♀️</div>
-    <div class="float-el fe1"><div class="fe-num">4.9★</div><div class="fe-lbl">Müşteri Puanı</div></div>
-    <div class="float-el fe2"><div class="fe-num">8K+</div><div class="fe-lbl">Mutlu Müşteri</div></div>
+    <div class="hero-img-main"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80" alt="Güzellik Merkezi"></div>
+    <div class="fe1"><div class="fe-num">4.9★</div><div class="fe-lbl">Müşteri Puanı</div></div>
+    <div class="fe2"><div class="fe-num">8K+</div><div class="fe-lbl">Mutlu Müşteri</div></div>
   </div>
 </section>
 
@@ -146,12 +145,12 @@ footer{padding:4rem 5%;border-top:1px solid var(--border);display:flex;justify-c
   <h2 class="sec-h">Premium <span>Hizmetlerimiz</span></h2>
   <p class="sec-p">Her biri uzman ellerle uygulanan, kişiye özel güzellik ve bakım hizmetleri.</p>
   <div class="svc-grid">
-    <div class="svc"><span class="svc-icon">💆‍♀️</span><h3>Yüz Bakımı</h3><p>Cilt tipinize özel derin temizlik, nemlendirme ve anti-aging bakım protokolleri.</p><div><span class="svc-price">450₺'den</span><span class="svc-dur">· 60 dk</span></div></div>
-    <div class="svc"><span class="svc-icon">💅</span><h3>Manikür & Pedikür</h3><p>Kalıcı oje, jel, nail art. Premium ürünlerle uzun süre dayanıklı sonuçlar.</p><div><span class="svc-price">250₺'den</span><span class="svc-dur">· 45 dk</span></div></div>
-    <div class="svc"><span class="svc-icon">💆</span><h3>Masaj Terapisi</h3><p>Klasik, aromaterapi, derin doku ve sıcak taş masajı seçenekleriyle derin rahatlama.</p><div><span class="svc-price">600₺'den</span><span class="svc-dur">· 60 dk</span></div></div>
-    <div class="svc"><span class="svc-icon">✨</span><h3>Lazer Epilasyon</h3><p>Diode lazer teknolojisiyle kalıcı ve ağrısız epilasyon. Tüm cilt tiplerine uygun.</p><div><span class="svc-price">350₺'den</span><span class="svc-dur">· 30 dk</span></div></div>
-    <div class="svc"><span class="svc-icon">🌸</span><h3>Kaş & Kirpik</h3><p>Microblading, laminasyon, hacimli kirpik ve lifting uygulamaları.</p><div><span class="svc-price">400₺'den</span><span class="svc-dur">· 90 dk</span></div></div>
-    <div class="svc"><span class="svc-icon">🧴</span><h3>Cilt Analizi</h3><p>İleri teknoloji cihazlarla detaylı cilt analizi ve kişisel bakım programı.</p><div><span class="svc-price">200₺</span><span class="svc-dur">· 30 dk</span></div></div>
+    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80" alt="Yüz Bakımı"></div><div class="svc-body"><h3>Yüz Bakımı</h3><p>Cilt tipinize özel derin temizlik, nemlendirme ve anti-aging bakım protokolleri.</p><div><span class="svc-price">450₺'den</span><span class="svc-dur">· 60 dk</span></div></div></div>
+    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&q=80" alt="Manikür"></div><div class="svc-body"><h3>Manikür & Pedikür</h3><p>Kalıcı oje, jel, nail art. Premium ürünlerle uzun süre dayanıklı sonuçlar.</p><div><span class="svc-price">250₺'den</span><span class="svc-dur">· 45 dk</span></div></div></div>
+    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&q=80" alt="Masaj"></div><div class="svc-body"><h3>Masaj Terapisi</h3><p>Klasik, aromaterapi, derin doku ve sıcak taş masajı seçenekleriyle derin rahatlama.</p><div><span class="svc-price">600₺'den</span><span class="svc-dur">· 60 dk</span></div></div></div>
+    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&q=80" alt="Lazer"></div><div class="svc-body"><h3>Lazer Epilasyon</h3><p>Diode lazer teknolojisiyle kalıcı ve ağrısız epilasyon. Tüm cilt tiplerine uygun.</p><div><span class="svc-price">350₺'den</span><span class="svc-dur">· 30 dk</span></div></div></div>
+    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Kaş Kirpik"></div><div class="svc-body"><h3>Kaş & Kirpik</h3><p>Microblading, laminasyon, hacimli kirpik ve lifting uygulamaları.</p><div><span class="svc-price">400₺'den</span><span class="svc-dur">· 90 dk</span></div></div></div>
+    <div class="svc"><div class="svc-img"><img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=500&q=80" alt="Cilt Analizi"></div><div class="svc-body"><h3>Cilt Analizi</h3><p>İleri teknoloji cihazlarla detaylı cilt analizi ve kişisel bakım programı.</p><div><span class="svc-price">200₺</span><span class="svc-dur">· 30 dk</span></div></div></div>
   </div>
 </section>
 
@@ -160,10 +159,10 @@ footer{padding:4rem 5%;border-top:1px solid var(--border);display:flex;justify-c
     <p class="sec-lbl" style="text-align:center">Uzman Ekibimiz</p>
     <h2 class="sec-h" style="text-align:center">Uzman <span>Estetisyenler</span></h2>
     <div class="team-grid">
-      <div class="tc"><div class="tc-img">👩</div><div class="tc-info"><h3>Elif Şahin</h3><div class="tc-spec">Cilt Bakım Uzmanı</div><div class="tc-exp">10 yıl deneyim</div></div></div>
-      <div class="tc"><div class="tc-img">👩‍🦱</div><div class="tc-info"><h3>Zeynep Ak</h3><div class="tc-spec">Lazer Uzmanı</div><div class="tc-exp">7 yıl deneyim</div></div></div>
-      <div class="tc"><div class="tc-img">👩‍🦰</div><div class="tc-info"><h3>Selin Kara</h3><div class="tc-spec">Nail Artist</div><div class="tc-exp">6 yıl deneyim</div></div></div>
-      <div class="tc"><div class="tc-img">👩‍🦳</div><div class="tc-info"><h3>Ayşe Demir</h3><div class="tc-spec">Masaj Terapisti</div><div class="tc-exp">12 yıl deneyim</div></div></div>
+      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Elif"></div><div class="tc-info"><h3>Elif Şahin</h3><div class="tc-spec">Cilt Bakım Uzmanı</div><div class="tc-exp">10 yıl deneyim</div></div></div>
+      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Zeynep"></div><div class="tc-info"><h3>Zeynep Ak</h3><div class="tc-spec">Lazer Uzmanı</div><div class="tc-exp">7 yıl deneyim</div></div></div>
+      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Selin"></div><div class="tc-info"><h3>Selin Kara</h3><div class="tc-spec">Nail Artist</div><div class="tc-exp">6 yıl deneyim</div></div></div>
+      <div class="tc"><div class="tc-img"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" alt="Ayşe"></div><div class="tc-info"><h3>Ayşe Demir</h3><div class="tc-spec">Masaj Terapisti</div><div class="tc-exp">12 yıl deneyim</div></div></div>
     </div>
   </div>
 </section>
@@ -173,7 +172,12 @@ footer{padding:4rem 5%;border-top:1px solid var(--border);display:flex;justify-c
     <p class="sec-lbl" style="text-align:center">Merkezimiz</p>
     <h2 class="sec-h" style="text-align:center">Atmosfer & <span>Bakım</span></h2>
     <div class="gal-grid">
-      <div class="gi">💆‍♀️</div><div class="gi">💅</div><div class="gi">🌸</div><div class="gi" style="font-size:2.5rem">✨🧴💎</div><div class="gi">🌺</div><div class="gi">🪷</div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Salon"></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=400&q=80" alt="Bakım"></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80" alt="Cilt"></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1560066984-138daaa7a248?w=800&q=80" alt="Ürünler"></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=400&q=80" alt="Manikür"></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80" alt="Masaj"></div>
     </div>
   </div>
 </section>
@@ -186,12 +190,12 @@ footer{padding:4rem 5%;border-top:1px solid var(--border);display:flex;justify-c
       <div class="fg"><label>Ad Soyad</label><input type="text" placeholder="Adınız" required></div>
       <div class="fg"><label>Telefon</label><input type="tel" placeholder="+90 5XX XXX XX XX"></div>
     </div>
-    <div class="fg"><label>Hizmet</label><select><option>Yüz Bakımı</option><option>Manikür & Pedikür</option><option>Masaj Terapisi</option><option>Lazer Epilasyon</option><option>Kaş & Kirpik</option><option>Cilt Analizi</option></select></div>
+    <div class="fg"><label>Hizmet</label><select><option>Yüz Bakımı</option><option>Manikür & Pedikür</option><option>Masaj Terapisi</option><option>Lazer Epilasyon</option><option>Kaş & Kirpik</option></select></div>
     <div class="fg-row">
       <div class="fg"><label>Uzman</label><select><option>Fark etmez</option><option>Elif Şahin</option><option>Zeynep Ak</option><option>Selin Kara</option><option>Ayşe Demir</option></select></div>
       <div class="fg"><label>Tarih</label><input type="date"></div>
     </div>
-    <div class="fg"><label>Tercih Edilen Saat</label><select><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option></select></div>
+    <div class="fg"><label>Saat</label><select><option>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option></select></div>
     <button class="appt-btn" onclick="submitAppt()">Randevu Talep Et ✨</button>
   </div>
 </section>
